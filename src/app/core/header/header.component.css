@@ -1,0 +1,29 @@
+.navigation {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.navigation .logo a {
+    font-size: 36px;
+    margin-left: 60px;
+    border: 2px solid rgb(153, 134, 134);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.navigation .nav a {
+    margin: 10px;
+    font-size: 18px;
+    margin-right: 20px;
+    border: 2px solid rgb(153, 134, 134);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.navigation  a:hover {
+    padding: 10px 20px;
+    background-color: rgb(153, 134, 134);
+    cursor: pointer;
+}
