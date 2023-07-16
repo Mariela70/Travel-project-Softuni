@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+*Removes all default whitespace
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*
+*Reset CSS model sizing calculations
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+ /* Typography */
+html {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Global styles */
+body {
+    margin: auto;
+    position: relative;
+    min-height: 100vh;
+    overflow: scroll;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+} 
+
+/* Responsive */
+@media (min-width: 800px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1280px) {
+    html {
+        font-size: 18px;
+    }
+}
