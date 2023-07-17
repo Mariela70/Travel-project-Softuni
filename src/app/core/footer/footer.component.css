@@ -1,7 +1,8 @@
 .footer {
+    position: absolute;
     color: #fff;
-    height: 70px;
-    text-align: end;
+    bottom: 0px;
+    right: 15px;
     font-size: 22px;
-    margin-right: 25px;
+    letter-spacing: 1px;
 }

@@ -12,6 +12,8 @@
     border: 2px solid rgb(153, 134, 134);
     padding: 10px 20px;
     border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
 }
 
 .navigation .nav a {
@@ -21,6 +23,8 @@
     border: 2px solid rgb(153, 134, 134);
     padding: 10px 20px;
     border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
 }
 .navigation  a:hover {
     padding: 10px 20px;

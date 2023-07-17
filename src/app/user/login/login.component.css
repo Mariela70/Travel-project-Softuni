@@ -33,3 +33,14 @@
     padding: 15px 50px;
 
 }
+.account a {
+    text-decoration: none;
+    border: 4px solid rgb(153, 134, 134);
+    color: #fff;
+    padding: 4px;
+    border-radius: 10px;
+
+}
+.account a:hover{
+    background-color: rgb(153, 134, 134);
+}
