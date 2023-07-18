@@ -1,0 +1,31 @@
+.container {
+    color: #fff;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container .title{
+    font-size: 45px;
+}
+.container .desc{
+    font-size: 26px;
+    margin-top: 0px;
+    margin-bottom: 55px;
+}
+.container .btn{
+    padding: 20px 80px;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid rgb(153, 134, 134);
+    text-decoration: none;
+}
+.container .btn:hover{
+    background-color: rgb(153, 134, 134);
+    cursor: pointer;
+    padding: 20px 80px;
+
+}
