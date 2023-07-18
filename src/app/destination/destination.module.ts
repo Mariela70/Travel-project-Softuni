@@ -4,7 +4,9 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { RouterModule } from '@angular/router';
 import { DestinationRoutingModule } from './destination-routing.module';
-import { AllComponent } from './all/all.component';
+import { DestinationsComponent } from './destinations/destinations.component';
+import { CurrentDestinationComponent } from './current-destination/current-destination.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,12 +14,14 @@ import { AllComponent } from './all/all.component';
   declarations: [
     CreateComponent,
     EditComponent,
-    AllComponent
+    DestinationsComponent,
+    CurrentDestinationComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    DestinationRoutingModule
+    DestinationRoutingModule,
+    FormsModule
   ]
 })
 export class DestinationModule { }
