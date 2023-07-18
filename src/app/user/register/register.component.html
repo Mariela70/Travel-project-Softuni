@@ -1,29 +1,49 @@
 
 <div class="registerSection">
-    <form class="register" action="" method="post">
+    <form class="register" #form="ngForm" (ngSubmit)="register(form)">
         <div class="register-form">
             <h2 class="title">Sign In</h2>
             <p class="input-firstName">
                 <label for="firstName">First Name</label>
-                <input type="text" name="firstName" id="firstName" placeholder="Mery">
+                <input type="text" name="firstName" id="firstName" placeholder="Mery" #inputFirstName="ngModel" ngModel required minlength="3">
             </p>
+            <ng-container *ngIf="inputFirstName.touched">
+                <p *ngIf="inputFirstName.errors?.['required']">First Name is required!</p>
+                <p *ngIf="inputFirstName.errors?.['minlength']">First Name must be at least 3 characters long!</p>
+            </ng-container>
             <p class="input-lastName">
                 <label for="lastName">Last Name</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Markova">
+                <input type="text" name="lastName" id="lastName" placeholder="Markova" #inputLastName="ngModel" ngModel required minlength="3">
             </p>
+            <ng-container *ngIf="inputLastName.touched">
+                <p *ngIf="inputLastName.errors?.['required']">Last is required!</p>
+                <p *ngIf="inputLastName.errors?.['minlength']">Last Name must be at least 3 characters long!</p>
+            </ng-container>
             <p class="input-email">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" placeholder="mery@gmail.com">
+                <input type="text" name="email" id="email" placeholder="mery@gmail.com" #inputEmail="ngModel" ngModel required [appEmail]="['bg', 'com']">
             </p>
+            <ng-container *ngIf="inputEmail.touched">
+                <p *ngIf="inputEmail.errors?.['required']">Email is required!</p>
+                <p *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!</p>
+            </ng-container>
 
             <p class="input-pass">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="******">
+                <input type="password" name="password" id="password" placeholder="******" #inputPassword="ngModel" ngModel required minlength="4">
             </p>
+            <ng-container *ngIf="inputPassword.touched">
+                <p *ngIf="inputPassword.errors?.['required']">Password is required!</p>
+                <p *ngIf="inputPassword.errors?.['minlength']">Password must be at least 4 characters long!</p>
+            </ng-container>
             <p class="input-repeatPassword">
-                <label for="repeatPassword">Password</label>
-                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="******">
+                <label for="repeatPassword">Repeat Password</label>
+                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="******" #inputRepeatPassword="ngModel" ngModel required minlength="4">
             </p>
+            <ng-container *ngIf="inputRepeatPassword.touched">
+                <p *ngIf="inputRepeatPassword.errors?.['required']">Repeat Password is required!</p>
+                <p *ngIf="inputRepeatPassword.errors?.['minlength']">Repeat Password must be at least 4 characters long!</p>
+            </ng-container>
 
             <button class="btn">Sign In</button>
 
