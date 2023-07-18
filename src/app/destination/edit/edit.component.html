@@ -40,7 +40,7 @@
                 <p *ngIf="inputDescription.errors?.['minlength']">Description must be at least 10 characters long!</p>
             </ng-container>
 
-            <button class="btn">Edit</button>
+            <button class="btn" [disabled]="form.invalid">Edit</button>
 
         </div>
     </form>

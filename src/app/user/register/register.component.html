@@ -45,7 +45,7 @@
                 <p *ngIf="inputRepeatPassword.errors?.['minlength']">Repeat Password must be at least 4 characters long!</p>
             </ng-container>
 
-            <button class="btn">Sign In</button>
+            <button class="btn" [disabled]="form.invalid">Sign In</button>
 
             <p class="account">
                 If you already have profile click here
