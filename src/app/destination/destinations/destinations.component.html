@@ -1,0 +1,16 @@
+<h1 class="title">LATEST DESTINATIONS</h1>
+    <section class="destinations" *ngFor="let all of allList">
+        <ul class="destination">
+            <div class="picture">
+                <img src={{all.imageUrl}}
+                    alt="">
+                <h2 class="destination-title">
+                    {{all.destinationTitle}}
+                </h2>
+                <a routerLink="/details">Details</a>
+            </div>           
+        </ul>
+    </section>
+    <section class="no-destination" *ngIf="thereAreNoDestination">
+        <h3>There ar no Destination yet!</h3>
+    </section>
