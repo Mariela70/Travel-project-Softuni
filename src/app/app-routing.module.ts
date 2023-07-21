@@ -12,6 +12,14 @@ const routes: Routes = [
     path: 'home',
    component: HomeComponent
   },
+  // {
+  //   path: 'not-found',
+  //  component: PageNotFoundComponent
+  // },
+  // {
+  //   path: '**',
+  //   redirectTo: '/not-found',
+  // },
   
 ];
 
