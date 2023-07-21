@@ -1,0 +1,57 @@
+.my-profile {
+    text-align: center;
+    margin-left: 80px;
+    margin-top: 80px;
+    color: #fff;
+    letter-spacing: 8px;
+    margin-bottom: 170px;
+}
+
+.my-profile h1 {
+    font-size: 50px;
+}
+
+
+.my-profile .info {
+    font-size: 20px;
+}
+
+.my-destination {
+    display: flex;
+}
+
+.destination {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    color: #fff;
+}
+
+.destination img {
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+    border: 10px dashed rgb(153, 134, 134);
+}
+
+.destination .picture:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.no-destination {
+    width: 400px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    color: #fff;
+    font-size: 55px;
+    border: 10px dashed rgb(153, 134, 134);
+    padding: 16px;
+}
+
+.no-destination:hover {
+    background-color: rgb(153, 134, 134);
+    transform: scale(1.5);
+    cursor: pointer;
+
+}
