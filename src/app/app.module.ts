@@ -8,11 +8,14 @@ import {HttpClientModule} from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { DestinationModule } from './destination/destination.module';
 import { HomeComponent } from './home/home.component';
+import { AuthenticateComponent } from './authenticate/authenticate.component';
+import { AppInterceptor } from './app.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AuthenticateComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { HomeComponent } from './home/home.component';
     UserModule,
     DestinationModule
   ],
-  providers: [],
+  providers: [AppInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
