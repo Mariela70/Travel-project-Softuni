@@ -1,15 +1,17 @@
 <header>
     <nav class="navigation">
         <div class="logo">
-            <a routerLink="/">Travel</a>
+            <a routerLink="/home">Travel</a>
         </div>
-        <div class="nav">
-            <a routerLink="/all">All Travel's</a>
+        <div class="nav" *ngIf="isLogin">
+            <a routerLink="/destinations">All Travel's</a>
             <a routerLink="/create">Destination</a>
             <a routerLink="/profile">Profille</a>
+            <a routerLink="/logout">Logout</a>
+            <div *ngIf="!isLogin">
             <a routerLink="/login">Login</a>
             <a routerLink="/register">Register</a>
-            <a routerLink="/logout">Logout</a>
         </div>
+    </div>
     </nav>
 </header>
