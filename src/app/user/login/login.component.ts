@@ -11,8 +11,13 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent {
 
   constructor(private userService: UserService, private router: Router) { }
-  login(form: NgForm): void {
-    // this.userService.login();
-    this.router.navigate(['/']);
-  }
+   login(form: NgForm): void {
+     if(form.invalid) {return}
+     const { email, password} = form.value;
+     this.userService.login(email, password)
+     .subscribe(user =>{
+       this.userService.user = user;
+       this.router.navigate(['/destinations']);
+      })
+     }
 }
