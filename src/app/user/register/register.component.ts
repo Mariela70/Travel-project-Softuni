@@ -9,9 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  constructor(private userService: UserService, private router: Router) { }
-  register(form: NgForm): void {
-    // this.userService.register();
-    this.router.navigate(['/']);
+   constructor(private userService: UserService, private router: Router) { }
+   register(form: NgForm): void {
+    if(form.invalid) {return}
+   const {firstName, lastName, email, password, rePassword} = form.value;
+    this.userService.register(firstName, lastName, email, password, rePassword)
+    .subscribe(user =>{
+       this.userService.user = user;
+      this.router.navigate(['/destinations'])
+    })
   }
 }
