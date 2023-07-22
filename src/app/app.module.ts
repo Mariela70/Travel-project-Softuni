@@ -7,14 +7,12 @@ import { CoreModule } from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { DestinationModule } from './destination/destination.module';
-import { HomeComponent } from './home/home.component';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { AppInterceptor } from './app.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     AuthenticateComponent
   ],
   imports: [
