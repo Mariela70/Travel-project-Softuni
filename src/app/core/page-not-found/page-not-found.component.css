@@ -1,0 +1,29 @@
+.not-found{
+    text-align: center;
+    color: #fff;
+   
+}
+.not-found .error{
+    font-size: 200px;
+    letter-spacing: 50px;
+    margin-bottom: 0px;
+}
+.not-found .page{
+    font-size: 40px;
+    letter-spacing: 30px;
+    margin-bottom: 50px;
+}
+.not-found .link{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 4px solid rgb(153, 134, 134);
+    
+}
+.not-found .link:hover{
+    background-color:  rgb(153, 134, 134);;
+    letter-spacing: 10px;
+}
