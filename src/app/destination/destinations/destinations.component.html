@@ -1,16 +1,18 @@
 <h1 class="title">LATEST DESTINATIONS</h1>
-    <section class="destinations" *ngFor="let all of allList">
+<div class="card">
+    <section id="destinations" *ngFor="let all of allList">
         <ul class="destination">
             <div class="picture">
-                <img src={{all.imageUrl}}
+                <img src={{all.image}}
                     alt="">
                 <h2 class="destination-title">
-                    {{all.destinationTitle}}
+                    {{all.title}}
                 </h2>
-                <a routerLink="/details">Details</a>
+                <a routerLink="/destinations/destinationId">Details</a>
             </div>           
         </ul>
     </section>
     <section class="no-destination" *ngIf="thereAreNoDestination">
         <h3>There ar no Destination yet!</h3>
     </section>
+</div>
