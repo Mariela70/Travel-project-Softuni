@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/api.service';
-import { All } from 'src/app/types/all';
+import { DestinationService } from '../destination.service';
+import { Destination } from 'src/app/types/destination';
 
 @Component({
   selector: 'app-destinations',
@@ -8,12 +8,12 @@ import { All } from 'src/app/types/all';
   styleUrls: ['./destinations.component.css']
 })
 export class DestinationsComponent implements OnInit {
-    allList: All[] =[];
+    allList: Destination[] =[];
     thereAreNoDestination: boolean = false;
-    constructor(private apiService: ApiService) {}
+    constructor(private apiService: DestinationService) {}
   
     ngOnInit(): void {
-      this.apiService.getAll().subscribe((all) =>{
+      this.apiService.getAllDestination().subscribe((all) =>{
         this.allList = all;
         if(this.allList.length === 0){
           this.thereAreNoDestination = true;
