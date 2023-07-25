@@ -7,6 +7,7 @@ import { DestinationRoutingModule } from './destination-routing.module';
 import { DestinationsComponent } from './destinations/destinations.component';
 import { CurrentDestinationComponent } from './current-destination/current-destination.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     DestinationRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class DestinationModule { }

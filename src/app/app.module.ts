@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { DestinationModule } from './destination/destination.module';
 import { AuthenticateComponent } from './authenticate/authenticate.component';
 import { AppInterceptor } from './app.interceptor';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { AppInterceptor } from './app.interceptor';
     AuthenticateComponent
   ],
   imports: [
+    UserModule,
+    CoreModule,
+    DestinationModule,
     BrowserModule,
     AppRoutingModule,
-    CoreModule,
     HttpClientModule,
-    UserModule,
-    DestinationModule
+    SharedModule
   ],
   providers: [AppInterceptor],
   bootstrap: [AppComponent]
