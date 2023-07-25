@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DestinationService } from '../destination.service';
-import { Destination } from 'src/app/types/destination';
+import { Destination } from 'src/app/shared/types/destination';
 
 @Component({
   selector: 'app-destinations',
@@ -8,7 +8,7 @@ import { Destination } from 'src/app/types/destination';
   styleUrls: ['./destinations.component.css']
 })
 export class DestinationsComponent implements OnInit {
-    allList: Destination[] =[];
+    allList: Destination[] | null = null;
     thereAreNoDestination: boolean = false;
     constructor(private apiService: DestinationService) {}
   

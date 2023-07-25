@@ -11,11 +11,11 @@ export class LogoutComponent {
   constructor(private router: Router, private userService: UserService) {
     this.userService.logout().subscribe({
       next: () => {
-        this.userService.user = undefined;
+        this.userService.user = null;
         this.router.navigate(['/login']);
       },
       error: () => {
-        this.userService.user = undefined;
+        this.userService.user = null;
         this.router.navigate(['/login']);
       }
     })

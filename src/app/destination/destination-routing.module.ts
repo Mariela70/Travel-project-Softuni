@@ -15,7 +15,7 @@ const routes: Routes = [
         component: DestinationsComponent,
       },
       {
-        path: ':destinationId',
+        path: ':destination/:id',
         component: CurrentDestinationComponent,
       },
     ],

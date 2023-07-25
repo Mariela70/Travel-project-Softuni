@@ -18,7 +18,7 @@ ngOnInit(): void {
       this.isAuthenticating = false;
     },
     error: () => {
-      this.userService.user = undefined;
+      this.userService.user = null;
       this.isAuthenticating = false;
     }
     
