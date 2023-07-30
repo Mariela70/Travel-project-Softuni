@@ -4,24 +4,41 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
+import { AuthActivate } from '../shared/guards/auth.activate';
 
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AuthActivate],
+    data: {
+      loginRequired: false
+    }
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [AuthActivate],
+    data: {
+      loginRequired: false
+    }
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthActivate],
+    data: {
+      loginRequired: true
+    }
   },
   {
     path: 'logout',
-    component: LogoutComponent
+    component: LogoutComponent,
+    canActivate: [AuthActivate],
+    data: {
+      loginRequired: true
+    }
   },
 
 ];
