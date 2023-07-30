@@ -13,12 +13,10 @@ constructor(private userService: UserService){}
 
 ngOnInit(): void {
   this.userService.getMyProfile().subscribe({
-    next: (user) => {
-      this.userService.user = user;
+    next: () => {
       this.isAuthenticating = false;
     },
     error: () => {
-      this.userService.user = null;
       this.isAuthenticating = false;
     }
     
