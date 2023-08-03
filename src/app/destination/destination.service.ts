@@ -1,31 +1,64 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Destination } from '../shared/types/destination';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.development';
+import { UserService } from '../user/user.service';
+import { Observable } from 'rxjs';
 
-
-const {appUrl} = environment;
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class DestinationService{
+export class DestinationService {
+  private appUrl = environment.appUrl;
 
-  constructor(private http: HttpClient) { }
+  private endPoints = {
+    create: '/data/destinations',
+    details: '/data/destinations/',
+    edit: '/data/destinations/',
+    delete: '/data/destinations/',
+    like: '/data/likes',
+  };
 
+  constructor(private http: HttpClient, private userService: UserService) {}
 
-  getAllDestination() {
-    return this.http.get<Destination[]>(`${appUrl}/data/destinations?sortBy=_createdOn%20desc`)
+  create(data: object): Observable<any> {
+    const accessToken = this.userService.user.accessToken;
+    const headers = new HttpHeaders({
+      'content-type': 'application/json',
+      'X-Authorization': accessToken,
+    });
+
+    return this.http.post(
+      `${this.appUrl}${this.endPoints.create}`,
+      JSON.stringify(data),
+      { headers }
+    );
   }
-  getDestinationById(id: string) {
-    return this.http.get<Destination>(`${appUrl}/data/destinations/` + id);
+
+  edit(destinationId: string, data: object): Observable<any> {
+    const accessToken = this.userService.user.accessToken;
+    const headers = new HttpHeaders({
+      'content-type': 'application/json',
+      'X-Authorization': accessToken,
+    });
+
+    return this.http.put(
+      `${this.appUrl}${this.endPoints.edit}${destinationId}`,
+      JSON.stringify(data),
+      { headers }
+    );
   }
-  createDestination(title: string, location: string, date: string, imageUrl: string, description: string) {
-    return this.http.post<Destination>(`${appUrl}/data/destinations`, {title, location, date, imageUrl, description});
+
+  delete(destinationId: string): Observable<any> {
+    const accessToken = this.userService.user.accessToken;
+    const headers = new HttpHeaders({
+      'content-type': 'application/json',
+      'X-Authorization': accessToken,
+    });
+
+    return this.http.delete(
+      `${this.appUrl}${this.endPoints.delete}${destinationId}`,
+      { headers }
+    );
   }
-  updateDestination(id: string, title: string, location: string, date: string, imageUrl: string, description: string) {
-    return this.http.put<Destination>(`${appUrl}/data/destinations/` + id, {title,  location, date, imageUrl, description});
-  }
-  deleteDestination(id: string) {
-    return this.http.delete<Destination>(`${appUrl}/data/destinations/` + id);
-  }
+
 }
