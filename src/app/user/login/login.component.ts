@@ -12,12 +12,25 @@ export class LoginComponent {
 
   constructor(private userService: UserService, private router: Router) { }
    login(form: NgForm): void {
-     if(form.invalid) {return}
-     const { email, password} = form.value;
-     this.userService.login(email, password)
-     .subscribe(user =>{
-       this.userService.user = user;
-       this.router.navigate(['/destinations']);
-      })
+    const email = form.value.email;
+    const password = form.value.password;
+
+    this.userService.login(email, password).subscribe(
+      (res) => {
+        localStorage.setItem('user', JSON.stringify(res));
+        this.router.navigate(['/destinations']);
+        this.userService.user = res;
+      },
+      (error) => {
+        if (error.status === 403) {
+          alert('Invalid email or password!');
+        } else {
+          alert(error.message);
+        }
+      }
+    );
      }
+     get isLoggedIn(): boolean {
+      return this.userService.isLoggedIn;
+    }
 }

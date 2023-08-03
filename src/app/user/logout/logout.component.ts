@@ -9,16 +9,9 @@ import { Router } from '@angular/router';
 })
 export class LogoutComponent {
   constructor(private router: Router, private userService: UserService) {
-    this.userService.logout().subscribe({
-      next: () => {
-        this.userService.user = null;
-        this.router.navigate(['/login']);
-      },
-      error: () => {
-        this.userService.user = null;
-        this.router.navigate(['/login']);
-      }
-    })
-  }
+    this.userService.logout()
+    this.router.navigate(['/login']);
+     
+    }
 
 }

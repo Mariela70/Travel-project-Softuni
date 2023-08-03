@@ -11,12 +11,24 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
    constructor(private userService: UserService, private router: Router) { }
    register(form: NgForm): void {
-    if(form.invalid) {return}
-   const {firstName, lastName, email, password, rePassword} = form.value;
-    this.userService.register(firstName, lastName, email, password, rePassword)
-    .subscribe(user =>{
-       this.userService.user = user;
-      this.router.navigate(['/destinations'])
-    })
-  }
+    const firstName = form.value.firstName;
+    const lastName = form.value.lastName;
+    const email = form.value.email;
+    const password = form.value.password;
+    const rePassword = form.value.rePassword;
+
+    this.userService.register(firstName, lastName, email, password, rePassword).subscribe(
+      (res) => {
+        localStorage.setItem('user', JSON.stringify(res));
+        this.router.navigate(['/destinations']);
+        this.userService.user = res;
+      },
+      (error) => {
+        error.message;
+      }
+    );
+     }
+     get isLoggedIn(): boolean {
+      return this.userService.isLoggedIn;
+    }
 }
