@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
@@ -13,7 +13,7 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     CommonModule,
@@ -23,6 +23,9 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent
+  ],
+  providers: [
+
   ]
 })
 export class CoreModule { }

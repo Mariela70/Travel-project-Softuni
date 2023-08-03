@@ -7,25 +7,22 @@ import { CoreModule } from './core/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import { UserModule } from './user/user.module';
 import { DestinationModule } from './destination/destination.module';
-import { AuthenticateComponent } from './authenticate/authenticate.component';
-import { AppInterceptor } from './app.interceptor';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticateComponent
   ],
   imports: [
     UserModule,
-    CoreModule,
     DestinationModule,
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     SharedModule
   ],
-  providers: [AppInterceptor],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
