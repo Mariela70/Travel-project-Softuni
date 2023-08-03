@@ -4,7 +4,6 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { DestinationsComponent } from './destinations/destinations.component';
 import { CurrentDestinationComponent } from './current-destination/current-destination.component';
-import { AuthActivate } from '../shared/guards/auth.activate';
 
 const routes: Routes = [
   {
@@ -16,30 +15,29 @@ const routes: Routes = [
         component: DestinationsComponent,
       },
       {
-        path: ':destination/:id',
+        path: ':destinationId',
         component: CurrentDestinationComponent,
-        canActivate: [AuthActivate],
-        data: {
-          loginRequired: true
-        }
+        // resolve: {
+        //   destination: DestinationResolver
+        // },
       },
     ],
   },
   {
     path: 'create',
     component: CreateComponent,
-    canActivate: [AuthActivate],
-    data: {
-      loginRequired: true
-    }
+    // canActivate: [AuthActivate],
+    // data: {
+    //   loginRequired: true
+    // }
   },
   {
     path: 'edit',
     component: EditComponent,
-    canActivate: [AuthActivate],
-    data: {
-      loginRequired: true
-    }
+    // canActivate: [AuthActivate],
+    // data: {
+    //   loginRequired: true
+    // }
   },
 
 ];
