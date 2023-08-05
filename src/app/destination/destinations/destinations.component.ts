@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Destination } from 'src/app/shared/types/destination';
-import { ApiServiceService } from 'src/app/api-service.service';
+import { DestinationService } from '../destination.service';
 
 @Component({
   selector: 'app-destinations',
@@ -10,7 +10,7 @@ import { ApiServiceService } from 'src/app/api-service.service';
 export class DestinationsComponent implements OnInit {
     allList: Destination[] | null = null;
     thereAreNoDestination: boolean = false;
-    constructor(private apiService: ApiServiceService) {}
+    constructor(private apiService: DestinationService) {}
   
     ngOnInit(): void {
       this.apiService.getAllDestination().subscribe((all) =>{

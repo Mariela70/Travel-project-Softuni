@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { UserService } from '../user/user.service';
 import { Observable } from 'rxjs';
+import { Destination } from '../shared/types/destination';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,13 @@ export class DestinationService {
   };
 
   constructor(private http: HttpClient, private userService: UserService) {}
+
+  getAllDestination() {
+    return this.http.get<Destination[]>(`${this.appUrl}/data/destinations`)
+  }
+  getDestinationById(id: string) {
+    return this.http.get<Destination>(`${this.appUrl}/data/destinations/${id}`);
+  }
 
   create(data: object): Observable<any> {
     const accessToken = this.userService.user.accessToken;

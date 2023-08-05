@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Destination } from 'src/app/shared/types/destination';
-import { ApiServiceService } from 'src/app/api-service.service';
 import { UserService } from 'src/app/user/user.service';
 import { DestinationService } from '../destination.service';
 
@@ -17,8 +16,7 @@ export class CurrentDestinationComponent implements OnInit {
   destinationId: string = this.activatedRoute.snapshot.params['destinationId'];
 
   constructor(
-    private activatedRoute: ActivatedRoute, 
-    private apiService: ApiServiceService,
+    private activatedRoute: ActivatedRoute,
     private userService: UserService,
     private destinationService: DestinationService,
     private router: Router,
@@ -33,7 +31,7 @@ export class CurrentDestinationComponent implements OnInit {
     // this.getDestinationLikes(this.destinationId);
   }
   fetchDestination(): void {
-    this.apiService
+    this.destinationService
       .getDestinationById(this.destinationId)
       .subscribe((destination) => {
         this.destination = destination;
