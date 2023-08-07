@@ -16,7 +16,6 @@ export class DestinationService {
     details: '/data/destinations/',
     edit: '/data/destinations/',
     delete: '/data/destinations/',
-    like: '/data/likes',
   };
 
   constructor(private http: HttpClient, private userService: UserService) {}

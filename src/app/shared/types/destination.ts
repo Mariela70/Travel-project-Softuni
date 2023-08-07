@@ -9,5 +9,4 @@ export interface Destination {
     date: number,
     image: string,
     description: string
-    likes: string[],
 }

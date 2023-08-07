@@ -27,8 +27,7 @@ export class CurrentDestinationComponent implements OnInit {
   ngOnInit(): void {
     this.fetchDestination();
     this.userId = this.userService.user?._id;
-    // this.getLikesList(this.destinationId);
-    // this.getDestinationLikes(this.destinationId);
+    
   }
   fetchDestination(): void {
     this.destinationService
