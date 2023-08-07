@@ -38,10 +38,10 @@
             </ng-container>
             <p class="input-repeatPassword">
                 <label for="repeatPassword">Repeat Password</label>
-                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="******" #inputRepeatPassword="ngModel" ngModel required minlength="4">
+                <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repeat your password" #inputRepeatPassword="ngModel" ngModel required minlength="4">
             </p>
             <ng-container *ngIf="inputRepeatPassword.touched">
-                <p *ngIf="inputRepeatPassword.errors?.['required']">Repeat Password is required!</p>
+                <p *ngIf="inputRepeatPassword.errors?.['required'] || inputPassword.value !== inputRepeatPassword.value">Passwords dont't match </p>
                 <p *ngIf="inputRepeatPassword.errors?.['minlength']">Repeat Password must be at least 4 characters long!</p>
             </ng-container>
 
