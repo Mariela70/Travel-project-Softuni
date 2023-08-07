@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthActivate } from '../shared/guards/auth.activate';
+import { CurrentDestinationComponent } from '../destination/current-destination/current-destination.component';
 
 
 const routes: Routes = [
@@ -18,8 +19,20 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent,
-    canActivate: [AuthActivate],
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        component: ProfileComponent,
+        canActivate: [AuthActivate],
+      },
+      {
+        path: ':destinationId',
+        component: CurrentDestinationComponent,
+        canActivate: [AuthActivate],
+
+      },
+    ]
   },
   {
     path: 'logout',

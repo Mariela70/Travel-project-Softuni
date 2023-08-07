@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { IUser } from '../shared/types/user-id';
+import { Destination } from '../shared/types/destination';
 
 const { appUrl } = environment;
 @Injectable({
@@ -63,16 +64,10 @@ export class UserService {
         localStorage.removeItem(this.USER_KEY);
       });
   }
-  // getMyProfile() {
-  //   return this.http.get<IUser>(`${appUrl}/users/me`)
-  //     .pipe(tap(user => this.user$$.next(user)),
-  //     catchError((err) => {
-  //       this.user$$.next(null);
-  //       return of(err);
-  //     }));
-  // }
-  // getMyDestination(id: string | null) {
-  //   return this.http.get<IUser>(`${appUrl}/data/destinations?where=_ownerId%3D%22${this.user}%22&sortBy=_createdOn%20desc`)
-  //     .pipe(tap(user => this.user$$.next(user)));
-  // }
+
+  getMyDestination(userId: string) {
+    return this.http.get<Destination[]>(`${appUrl}/data/destinations?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`)
+
+  }
+  
 }

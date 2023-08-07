@@ -4,75 +4,25 @@
 <div class="info">
     <h3>{{user?.firstName}} {{user?.lastName}}</h3>
 </div>
-
 </section>
-<section class="my-destination">
+<app-loader *ngIf="!destinationsList"/>
+<section  *ngFor="let destination of destinationsList"  class="my-destination">
     <ul class="destination">
         <div class="picture">
-            <img src='https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg'
+            <img src={{destination.image}}
                 alt="destination">
             <h2 class="destination-title">
-                Title
+                {{destination.title}}
             </h2>
             <div class="likes">
-                <small>Likes</small>
+                <small>likes</small>
             </div>
-            <a routerLink="/destinations/destinationId">Details</a>
-        </div>           
-    </ul>
-    <ul class="destination">
-        <div class="picture">
-            <img src='https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg'
-                alt="destination">
-            <h2 class="destination-title">
-                Title
-            </h2>
-            <div class="likes">
-                <small>Likes</small>
-            </div>
-            <a routerLink="/details">Details</a>
-        </div>           
-    </ul>
-    <ul class="destination">
-        <div class="picture">
-            <img src='https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg'
-                alt="destination">
-            <h2 class="destination-title">
-                Title
-            </h2>
-            <div class="likes">
-                <small>Likes</small>
-            </div>
-            <a routerLink="/details">Details</a>
-        </div>           
-    </ul>
-    <ul class="destination">
-        <div class="picture">
-            <img src='https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg'
-                alt="destination">
-            <h2 class="destination-title">
-                Title
-            </h2>
-            <div class="likes">
-                <small>Likes</small>
-            </div>
-            <a routerLink="/details">Details</a>
-        </div>           
-    </ul>
-    <ul class="destination">
-        <div class="picture">
-            <img src='https://www.travelandleisure.com/thmb/tR6tey2yp-nkgPkzR9a0wkUzFb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Palawan-GettyImages-521110659-90b737f6608b4564aa8cd6c554b2bdf5.jpg'
-                alt="destination">
-            <h2 class="destination-title">
-                Title
-            </h2>
-            <div class="likes">
-                <small>Likes</small>
-            </div>
-            <a routerLink="/details">Details</a>
+            <a [routerLink]="destination._id">Details</a>
         </div>           
     </ul>
 </section> 
-<div class="no-destination">
+<div class="no-destination"*ngIf="thereAreNoDestination">
     <p>There are no Destination yet!</p>
 </div>
+
+
