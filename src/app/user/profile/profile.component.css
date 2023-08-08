@@ -1,10 +1,15 @@
+.my{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+    margin-right: 40px;
+}
 .my-profile {
     text-align: center;
-    margin-left: 80px;
-    margin-top: 80px;
+    margin-top: 150px;
     color: #fff;
     letter-spacing: 8px;
-    margin-bottom: 170px;
+    margin-bottom: 180px;
 }
 
 .my-profile h1 {
@@ -13,45 +18,44 @@
 
 
 .my-profile .info {
-    font-size: 20px;
+    font-size: 30px;
+    letter-spacing: 2px;
 }
-
-.my-destination {
-    display: flex;
-}
-
-.destination {
+.card{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     color: #fff;
+
 }
 
 .destination img {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 6px;
-    border: 10px dashed rgb(153, 134, 134);
+    cursor: pointer;
+
 }
 
 .destination .picture:hover {
-    transform: scale(1.5);
+    transform: scale(1.2);
     cursor: pointer;
 }
 
 .no-destination {
     width: 400px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
+    height: 300px;
     color: #fff;
     font-size: 55px;
-    border: 10px dashed rgb(153, 134, 134);
     padding: 16px;
+    margin-top: 50px;
+    margin-left: 190px;
+
 }
 
 .no-destination:hover {
     background-color: rgb(153, 134, 134);
-    transform: scale(1.5);
+    transform: scale(1.2);
     cursor: pointer;
 
 }
