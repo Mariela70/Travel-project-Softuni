@@ -1,24 +1,24 @@
 <div class="editSection">
     <form class="edit"  #form="ngForm" (ngSubmit)="edit(form)">
         <div class="edit-form">
-            <h2>Edit your own post!</h2>
+            <h2>Edit your own post! <span><i class="fas fa-pen-fancy"></i></span></h2>
             <p class="input-title">
                 <label for="title">Title</label>
-                <input type="text" name="title" id="title" placeholder="Week in Monaco" #inputTitle="ngModel" ngModel required>
+                <input type="text" name="title" id="title" placeholder="Week in Monaco" #inputTitle="ngModel" ngModel="{{ destination.title }}" required>
             </p>
             <ng-container *ngIf="inputTitle.touched">
                 <p *ngIf="inputTitle.errors?.['required']">Title is required!</p>
             </ng-container>
             <p class="input-location">
                 <label for="location">Location</label>
-                <input type="text" name="location" id="location" placeholder="Monaco" #inputLocation="ngModel" ngModel required>
+                <input type="text" name="location" id="location" placeholder="Monaco" #inputLocation="ngModel" ngModel="{{ destination.location }}" required>
             </p>
             <ng-container *ngIf="inputLocation.touched">
                 <p *ngIf="inputLocation.errors?.['required']">Location is required!</p>
             </ng-container>
             <p class="input-date">
                 <label for="date">Date</label>
-                <input type="text" name="date" id="date" placeholder="21.03.2023" #inputDate="ngModel" ngModel required>
+                <input type="text" name="date" id="date" placeholder="21.03.2023" #inputDate="ngModel" ngModel="{{ destination.date }}" required>
             </p>
             <ng-container *ngIf="inputDate.touched">
                 <p *ngIf="inputDate.errors?.['required']">Date is required!</p>
@@ -26,14 +26,14 @@
 
             <p class="input-imageUrl">
                 <label for="imageUrl">Image</label>
-                <input type="text" name="imageUrl" id="imageUrl" placeholder="http:/..." #inputImage="ngModel" ngModel required>
+                <input type="url" name="imageUrl" id="imageUrl" placeholder="http:/..." #inputImage="ngModel" ngModel="{{ destination.imageUrl }}" required>
             </p>
             <ng-container *ngIf="inputImage.touched">
                 <p *ngIf="inputImage.errors?.['required']">Image is required!</p>
             </ng-container>
             <p class="input-description">
                 <label for="description">Description</label>
-                <textarea type="text" name="description" id="description" placeholder="Travel in ....." #inputDescription="ngModel" ngModel required minlength="10"></textarea>
+                <textarea type="text" name="description" id="description" placeholder="Travel in ....." #inputDescription="ngModel" ngModel="{{ destination.description }}" required minlength="10"></textarea>
             </p>
             <ng-container *ngIf="inputDescription.touched">
                 <p *ngIf="inputDescription.errors?.['required']">Description is required!</p>
