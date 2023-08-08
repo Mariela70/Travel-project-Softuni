@@ -2,27 +2,25 @@
 <h1>My Profile</h1>
 
 <div class="info">
-    <h3>{{user?.firstName}} {{user?.lastName}}</h3>
+    <h3>{{user?.firstName}} {{user?.lastName}} <span>{{user?.age}}</span></h3>
 </div>
 </section>
 <app-loader *ngIf="!destinationsList"/>
+<div class="card">
 <section  *ngFor="let destination of destinationsList"  class="my-destination">
     <ul class="destination">
         <div class="picture">
-            <img src={{destination.image}}
+            <img [routerLink]="destination._id" src={{destination.imageUrl}}
                 alt="destination">
             <h2 class="destination-title">
                 {{destination.title}}
             </h2>
-            <div class="likes">
-                <small>likes</small>
-            </div>
-            <a [routerLink]="destination._id">Details</a>
         </div>           
     </ul>
 </section> 
 <div class="no-destination"*ngIf="thereAreNoDestination">
     <p>There are no Destination yet!</p>
+</div>
 </div>
 
 

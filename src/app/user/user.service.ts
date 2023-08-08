@@ -41,11 +41,12 @@ export class UserService {
     });
   }
 
-  register(firstName: string, lastName: string, email: string, password: string, rePassword: string): Observable<any> {
+  register(firstName: string, lastName: string, email: string, age: number, password: string, rePassword: string): Observable<any> {
     return this.http.post(`${this.appUrl}${this.endpoints.register}`, {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      age: age,
       password: password,
       rePassword: rePassword
     });

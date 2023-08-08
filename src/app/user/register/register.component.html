@@ -27,6 +27,13 @@
                 <p *ngIf="inputEmail.errors?.['required']">Email is required!</p>
                 <p *ngIf="inputEmail.errors?.['appEmailValidator']">Email is not valid!, Email must be at least 4 characters long and must contain @ and gmail!</p>
             </ng-container>
+            <p class="input-age">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" placeholder="26" #inputAge="ngModel" ngModel required >
+            </p>
+            <ng-container *ngIf="inputAge.touched">
+                <p *ngIf="inputAge.errors?.['required']">Age is required!</p>
+            </ng-container>
 
             <p class="input-pass">
                 <label for="password">Password</label>
