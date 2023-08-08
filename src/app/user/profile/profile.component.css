@@ -1,6 +1,12 @@
+.my{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 40px;
+    margin-right: 40px;
+}
 .my-profile {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 150px;
     color: #fff;
     letter-spacing: 8px;
     margin-bottom: 180px;
@@ -17,7 +23,7 @@
 }
 .card{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     color: #fff;
 
@@ -38,13 +44,13 @@
 
 .no-destination {
     width: 400px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
+    height: 300px;
     color: #fff;
     font-size: 55px;
     padding: 16px;
-    margin-left: 70px;
+    margin-top: 50px;
+    margin-left: 190px;
+
 }
 
 .no-destination:hover {

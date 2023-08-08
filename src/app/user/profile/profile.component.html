@@ -1,8 +1,10 @@
+<div class="my">
 <section class="my-profile">
-<h1>My Profile</h1>
+<h1>My Profile <span><i class="far fa-paper-plane"></i></span></h1>
 
 <div class="info">
     <h3>{{user?.firstName}} {{user?.lastName}} <span>{{user?.age}}</span></h3>
+    <h4>{{user?.email}}</h4>
 </div>
 </section>
 <app-loader *ngIf="!destinationsList"/>
@@ -20,6 +22,7 @@
 </section> 
 <div class="no-destination"*ngIf="thereAreNoDestination">
     <p>There are no Destination yet!</p>
+</div>
 </div>
 </div>
 
