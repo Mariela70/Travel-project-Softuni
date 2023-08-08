@@ -26,7 +26,7 @@
 
             <p class="input-imageUrl">
                 <label for="imageUrl">Image</label>
-                <input type="text" name="imageUrl" id="imageUrl" placeholder="http:/..." #inputImage="ngModel" ngModel required>
+                <input type="url" name="imageUrl" id="imageUrl" placeholder="http:/..." #inputImage="ngModel" ngModel required>
             </p>
             <ng-container *ngIf="inputImage.touched">
                 <p *ngIf="inputImage.errors?.['required']">Image is required!</p>

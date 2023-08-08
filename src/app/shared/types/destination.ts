@@ -7,6 +7,6 @@ export interface Destination {
     title: string,
     location: string,
     date: number,
-    image: string,
+    imageUrl: string,
     description: string
 }

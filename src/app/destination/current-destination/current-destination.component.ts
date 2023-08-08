@@ -42,7 +42,7 @@ export class CurrentDestinationComponent implements OnInit {
         title: this.destination?.title,
         location: this.destination?.location,
         date: this.destination?.date,
-        image: this.destination?.image,
+        imageUrl: this.destination?.imageUrl,
         description: this.destination?.description,
         _id: this.destinationId,
       },
@@ -58,7 +58,7 @@ export class CurrentDestinationComponent implements OnInit {
       this.destinationService
         .delete(this.destinationId)
         .subscribe((res) => {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/destinations']);
         });
     }
   }

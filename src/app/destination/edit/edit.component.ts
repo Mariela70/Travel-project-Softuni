@@ -28,7 +28,7 @@ export class EditComponent {
     const title = formData.title;
     const location = formData.location
     const date = formData.date;
-    const image = formData.image;
+    const imageUrl = formData.imageUrl;
     const description = formData.description;
 
     const data = {
@@ -36,7 +36,7 @@ export class EditComponent {
       location: location,
       date: date,
       description: description,
-      image: image,
+      imageUrl: imageUrl,
     };
 
     this.destinationService

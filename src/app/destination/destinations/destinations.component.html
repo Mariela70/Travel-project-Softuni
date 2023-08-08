@@ -4,12 +4,11 @@
     <section id="destinations" *ngFor="let all of allList">
         <ul class="destination">
             <div class="picture">
-                <img src={{all.image}}
+                <img [routerLink]="all._id" src={{all.imageUrl}}
                     alt="">
                 <h2 class="destination-title">
                     {{all.title}}
                 </h2>
-                <a [routerLink]="all._id">Details</a>
             </div>           
         </ul>
     </section>

@@ -8,16 +8,18 @@
     margin-top: 70px;
     color: #fff;
 }
-.card .destination {
+.card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     color: #fff;
-} 
+}
 
  .destination img {
     width: 500px;
     height: 300px;
+    cursor: pointer;
+    border-radius: 6px;
 } 
 
 .destination .picture:hover {
