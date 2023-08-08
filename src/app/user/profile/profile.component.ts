@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { DestinationService } from 'src/app/destination/destination.service';
 import { Destination } from 'src/app/shared/types/destination';
 
 @Component({
