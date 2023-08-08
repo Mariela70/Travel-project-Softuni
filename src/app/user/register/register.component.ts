@@ -14,10 +14,11 @@ export class RegisterComponent {
     const firstName = form.value.firstName;
     const lastName = form.value.lastName;
     const email = form.value.email;
+    const age = form.value.age;
     const password = form.value.password;
     const rePassword = form.value.rePassword;
 
-    this.userService.register(firstName, lastName, email, password, rePassword).subscribe(
+    this.userService.register(firstName, lastName, email, age, password, rePassword).subscribe(
       (res) => {
         localStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['/destinations']);
@@ -32,3 +33,4 @@ export class RegisterComponent {
       return this.userService.isLoggedIn;
     }
 }
+
