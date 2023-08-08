@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
 # About
-Single Page App for for sharing your favorite mountain adventure. The application allows visitors to browse through different publications. Users may register email and password, which allows them to create their own publications. Creators can also edit and delete their own publications at any time.
+Single Page App for for sharing your favorite destination. The application allows visitors to browse through different publications. Users may register email and password, which allows them to create their own publications. Creators can also edit and delete their own publications at any time.
 
 # Technical Details
 The application have following resources:
@@ -24,17 +24,17 @@ Logout page – The logout action is available for the logged in users. Logout f
 
 Home page – All users will be welcomed by the Home page, where they can naviagate to the other pages.
 
-Catalog page – The page contains a list with the last 3 destinations in the system.
+Catalog page – The page contains a list with the last destinations in the system.
 
 Create destination page – The create page is available for logged in users. It contains a form for creating new destination. Creating fuctionalty sends POST request to the correct endpoint. The service will return the newly created record. Upon success, the user will be redirected to the catalog page.
 
 Details page – The logged in users are able to view details about every adventure. Clicking the Details button in the view will display the page. If the currently logged in user is the creator of the publication, he can clickt the Edit and Delete buttons.
 
-
 Edit page – The edit page is available for the owner to edit their own publication. The service will return the modified record. Upon success the user will be redirected to the details page.
 
 Delete page – The delete action is available for the owner. When the owner clicks on the Delete button, the publication will be deleted from the system.
 
+Profile Page – The page show the user names, age, email and all created publications made by the current user.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
