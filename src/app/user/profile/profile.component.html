@@ -1,29 +1,26 @@
 <div class="my">
     <section class="my-profile">
-    <h1>My Profile <span><i class="far fa-paper-plane"></i></span></h1>
-    
-    <div class="info">
-        <h3>{{user?.firstName}} {{user?.lastName}} <span>{{user?.age}}</span></h3>
-        <h4>{{user?.email}}</h4>
-    </div>
+        <h1>My Profile <span><i class="far fa-paper-plane"></i></span></h1>
+
+        <div class="info">
+            <h3>{{user?.firstName}} {{user?.lastName}} <span>{{user?.age}}</span></h3>
+            <h4>{{user?.email}}</h4>
+        </div>
     </section>
-    <app-loader *ngIf="!destinationsList"/>
+    <app-loader *ngIf="!destinationsList" />
     <div class="card">
-    <section  *ngFor="let destination of destinationsList"  class="my-destination">
-        <ul class="destination">
-            <div class="picture">
-                <img [routerLink]="destination._id" src={{destination.imageUrl}}
-                    alt="destination">
-                <h2 class="destination-title">
-                    {{destination.title}}
-                </h2>
-            </div>           
-        </ul>
-    </section> 
-    <div class="no-destination"*ngIf="thereAreNoDestination">
-        <p>There are no Destination yet!</p>
+        <section *ngFor="let destination of destinationsList" class="my-destination">
+            <ul class="destination">
+                <div class="picture">
+                    <img [routerLink]="destination._id" src={{destination.imageUrl}} alt="destination">
+                    <h2 class="destination-title">
+                        {{destination.title}}
+                    </h2>
+                </div>
+            </ul>
+        </section>
+        <div class="no-destination" *ngIf="thereAreNoDestination">
+            <p>There are no Destination yet!</p>
+        </div>
     </div>
-    </div>
-    </div>
-
-
+</div>

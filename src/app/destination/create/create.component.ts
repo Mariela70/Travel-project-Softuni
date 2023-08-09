@@ -16,16 +16,18 @@ export class CreateComponent {
 
   create(form: NgForm): void {
     const formData = form.value;
-    const destination = formData.destination;
+    const title = formData.title;
+    const location = formData.location;
+    const date = formData.date;
     const imageUrl = formData.imageUrl;
     const description = formData.description;
-    const type = formData.type;
 
     const data = {
-      destination: destination,
+      title: title,
+      location: location,
       description: description,
       imageUrl: imageUrl,
-      type: type,
+      date: date,
     };
 
     this.destinationService.create(data).subscribe(
